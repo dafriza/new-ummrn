@@ -1,0 +1,10 @@
+[2023-11-24 22:42:41] local.ERROR: There are no commands defined in the "publish" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"publish\" namespace. at C:\\daffa\\new-ummrn\\vendor\\symfony\\console\\Application.php:650)
+[stacktrace]
+#0 C:\\daffa\\new-ummrn\\vendor\\symfony\\console\\Application.php(701): Symfony\\Component\\Console\\Application->findNamespace('publish')
+#1 C:\\daffa\\new-ummrn\\vendor\\symfony\\console\\Application.php(259): Symfony\\Component\\Console\\Application->find('publish:vendor')
+#2 C:\\daffa\\new-ummrn\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\daffa\\new-ummrn\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\daffa\\new-ummrn\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\daffa\\new-ummrn\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
