@@ -16,7 +16,7 @@ class CreateCommunityPostsTable extends Migration
         Schema::create('community_posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description',255);
+            $table->longText('description');
             $table->foreignId('communities_practice_id')->constrained('communities_of_practices')->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();

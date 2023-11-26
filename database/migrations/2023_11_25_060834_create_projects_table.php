@@ -17,8 +17,9 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description',255);
-            $table->string('status')->commennt('1 => open, 2 => draft, 3 => closed');
+            $table->tinyInteger('status')->comment('1 => open, 2 => draft, 3 => closed');
             $table->longText('attachment')->comment('gambar');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
         });

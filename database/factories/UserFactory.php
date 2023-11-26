@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
 {
@@ -15,21 +16,14 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'username' => 
+            'username' => Str::lower($this->faker->firstName()),
+            'password' => Hash::make('1'),
+            'fullname' => $this->faker->firstName() .' '. $this->faker->lastName(),
+            'alamat' => $this->faker->address(),
+            'bidang_keilmuan' => $this->faker->randomElement(['Sistem Informasi','Rekayasa Perangkat Lunak', 'Jaringan']),
+            'keahlian' => $this->faker->randomElement(['Web Developer', 'Technician', 'Security']),
+            'email' => $this->faker->unique()->safeEmail(),
+            'foto' => $this->faker->imageUrl(480, 480, 'human', true)
         ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
-     */
-    public function unverified()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
     }
 }

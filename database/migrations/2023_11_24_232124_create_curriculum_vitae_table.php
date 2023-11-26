@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResearchersTable extends Migration
+class CreateCurriculumVitaeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateResearchersTable extends Migration
      */
     public function up()
     {
-        Schema::create('curriculum_vitae', function (Blueprint $table) {
+        Schema::create('curriculum_vitaes', function (Blueprint $table) {
             $table->id();
             $table->longText('educations');
             $table->longText('work_experiences')->nullable();
@@ -35,6 +35,6 @@ class CreateResearchersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('researchers');
+        Schema::dropIfExists('curriculum_vitae');
     }
 }

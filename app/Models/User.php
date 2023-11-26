@@ -13,34 +13,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $guarded = [];
+    public function author()
+    {
+        return $this->hasMany(CommunitiesOfPractice::class, 'author', 'id');
+    }
+    public function curriculum_vitae()
+    {
+        return $this->hasMany(CurriculumVitae::class, 'user_id', 'id');
+    }
+    public function project()
+    {
+        return $this->hasMany(Project::class, 'user_id', 'id');
+    }
 }
