@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top" style="height:100px; background-color:#113448">
+<nav class="navbar navbar-expand-md navbar-dark navbar-custom" style="height:100px; background-color:#113448">
     <!-- Text Logo - Use this if you don't have a graphic logo -->
     <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 

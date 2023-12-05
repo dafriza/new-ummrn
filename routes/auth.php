@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-Route::controller(AuthController::class)->name('auth.')->group(function () {
-    Route::get('login', 'login')->name('login');
-});
+Route::controller(AuthController::class)
+    ->name('auth.')
+    ->group(function () {
+        Route::get('login', 'login')->name('login');
+        Route::post('auth', 'auth')->name('auth');
+    });
