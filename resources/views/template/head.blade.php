@@ -19,6 +19,7 @@
     <link href="{{asset('css/swiper.css')}}" rel="stylesheet">
     <link href="{{asset('css/magnific-popup.css')}}" rel="stylesheet">
     <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+    @livewireStyles
     @stack('styles')
 
     <!-- Favicon  -->

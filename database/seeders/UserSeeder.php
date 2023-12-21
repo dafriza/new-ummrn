@@ -4,11 +4,12 @@ namespace Database\Seeders;
 
 use Faker\Factory;
 use App\Models\User;
+use App\Models\Project;
+use App\Models\CommunityPosts;
 use App\Models\CurriculumVitae;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use App\Models\CommunitiesOfPractice;
-use App\Models\CommunityPosts;
-use App\Models\Project;
 use Database\Factories\CurriculumVitaeFactory;
 
 class UserSeeder extends Seeder
@@ -44,5 +45,17 @@ class UserSeeder extends Seeder
                         ->create();
                 }
             });
+        $admin = User::create([
+            'username' => 'superadmin',
+            'password' => Hash::make('1'),
+            'fullname' => 'superadmin',
+            'alamat' => '',
+            'bidang_keilmuan' => '',
+            'keahlian' => '',
+            'email' => '',
+            'foto' => '',
+            // ])->assignRole('superadmin');
+        ]);
+        $admin->assignRole('superadmin');
     }
 }

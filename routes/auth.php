@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-Route::controller(AuthController::class)
+Route::prefix('auth')
     ->name('auth.')
     ->group(function () {
-        Route::get('login', 'login')->name('login');
-        Route::post('auth', 'auth')->name('auth');
+        Route::get('login', Login::class)->name('login');
+        Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     });

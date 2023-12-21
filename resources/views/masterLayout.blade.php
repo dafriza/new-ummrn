@@ -20,6 +20,7 @@
     <!-- end of navbar -->
     @include('template.footer')
     <!-- end of copyright -->
+    @include('sweetalert::alert')
     @include('template.script')
 </body>
 

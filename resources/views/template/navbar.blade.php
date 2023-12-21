@@ -47,10 +47,13 @@
                         <a class='dropdown-item' href='index.php?page=my_account'><span class='item-text'>MY
                                 ACCOUNT</span></a>
                         <div class='dropdown-items-divide-hr'></div>
-                        <a class='dropdown-item' href='logout.php'><span class='item-text'>LOGOUT</span></a>
+                        <form action="{{ route('auth.logout') }}" method="post">
+                            @csrf
+                            <button class='dropdown-item' type="submit"><span class='item-text'>LOGOUT</span></button>
+                        </form>
                     </div>
-                    @else
-                    <a class="nav-link" href="{{route('auth.login')}}">LOGIN</a>
+                @else
+                    <a class="nav-link" href="{{ route('auth.login') }}">LOGIN</a>
                 @endif
             </li>
         </ul>
