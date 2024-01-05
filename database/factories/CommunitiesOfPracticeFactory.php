@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommunitiesOfPracticeFactory extends Factory
@@ -29,7 +30,9 @@ class CommunitiesOfPracticeFactory extends Factory
                 'title' => $this->faker->sentence(3),
                 'description' => $this->faker->paragraph(),
                 'member' => [User::role('student')->get()->random(),User::role('student')->get()->random(),User::role('student')->get()->random()],
-                'author' => $lecture->id
+                'status' => $this->faker->randomElement([0,1]),
+                'attachment' => 'BPR_in_the_Public_Sector_A_Case_of_Successful_Fail-2.pdf',
+                'author' => $lecture->id,
             ];
         });
     }

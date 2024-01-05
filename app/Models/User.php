@@ -20,7 +20,7 @@ class User extends Authenticatable
     }
     public function curriculum_vitae()
     {
-        return $this->hasMany(CurriculumVitae::class, 'user_id', 'id');
+        return $this->hasOne(CurriculumVitae::class, 'user_id', 'id');
     }
     public function project()
     {

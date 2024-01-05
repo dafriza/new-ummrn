@@ -18,6 +18,8 @@ class CreateCommunitiesOfPracticesTable extends Migration
             $table->string('title');
             $table->string('description',255);
             $table->longText('member');
+            $table->tinyInteger('status')->comment('1 => aktif, 0 => tidak aktif');
+            $table->longText('attachment');
             $table->foreignId('author')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
