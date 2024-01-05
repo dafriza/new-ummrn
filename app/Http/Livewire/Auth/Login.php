@@ -31,7 +31,7 @@ class Login extends Component
             if ($role == 'student') {
                 return redirect()->to(route('/'));
             } elseif ($role == 'lecture') {
-                return redirect()->to(route('lecture/dashboard'));
+                return redirect()->to('lecture/dashboard');
             } else {
                 return redirect()->to('admin/dashboard');
             }

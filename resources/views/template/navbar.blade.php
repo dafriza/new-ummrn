@@ -26,16 +26,16 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="index.php?page=cops">COMMUNITIES OF PRACTICE</a>
+                <a class="nav-link page-scroll" href="{{ route('cops') }}">COMMUNITIES OF PRACTICE</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="index.php?page=projects">PROJECTS</a>
+                <a class="nav-link page-scroll" href="{{ route('projects') }}">PROJECTS</a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link page-scroll" href="index.php?page=cfps">CALL FOR PROJECTS</a>
-            </li>
+            </li> --}}
             <li class='nav-item dropdown'>
                 @if (Auth::check())
                     <span class='nav-link dropdown-toggle page-scroll' id='navbarDropdown' role='button'

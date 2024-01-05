@@ -7,6 +7,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\CommunityPosts;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\CommunitiesOfPractice;
 
 class DashboardController extends Controller
@@ -17,7 +18,8 @@ class DashboardController extends Controller
         $count_community_practices = $this->getCommunityPractices();
         $count_project = $this->getProjects();
         $count_community_post = $this->getCommunityPosts();
-        return view('admin.index', compact('count_user', 'count_community_practices', 'count_project', 'count_community_post'));
+        $user = Auth::user();
+        return view('admin.index', compact('count_user', 'count_community_practices', 'count_project', 'count_community_post','user'));
     }
     function getUsers()
     {
